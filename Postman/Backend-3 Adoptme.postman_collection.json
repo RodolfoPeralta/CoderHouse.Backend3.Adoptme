@@ -1,0 +1,503 @@
+{
+	"info": {
+		"_postman_id": "a6b22d00-5909-4933-989a-1b151a348023",
+		"name": "Backend-3 Adoptme",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32093376"
+	},
+	"item": [
+		{
+			"name": "Pets",
+			"item": [
+				{
+					"name": "Get Pets",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY4MmU1ZmQxNWQ4OWYzOWRiNmVlNTcxYSIsImVtYWlsIjoicm9kb2xmb3BlcmFsdGExOTk0QGhvdG1haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkeURhbzQxS2s0dFM5eHVKNVdzb3BwdXlVQUNFS1hEbTd2cVNyTm5GMWk3RWtteTRGLm1yQTYiLCJib2FyZCI6IjY4MmU1ZmQxNWQ4OWYzOWRiNmVlNTcxOCIsIl9fdiI6MH0sImlhdCI6MTc0Nzg3MjUzMywiZXhwIjoxNzQ3ODczNDMzfQ.nMZQ-x6bRCV2zxL5T2imNnPce-76TIHrPY8LytndnBw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/pets/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pets",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Pet By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/tasks/6835bafe367610a48a41776b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"tasks",
+								"6835bafe367610a48a41776b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Pet By Id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Luna\",\r\n    \"specie\": \"Cocker\",\r\n    \"birthDate\": \"12-09-2004\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/pets/68443bf61c24310c30dff45c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pets",
+								"68443bf61c24310c30dff45c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Pet By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/pets/68443bf61c24310c30dff462",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pets",
+								"68443bf61c24310c30dff462"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Adoptions",
+			"item": [
+				{
+					"name": "Get Adoptions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/adoptions/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"adoptions",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Adoption By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/adoptions/68532b7100d34fa66e49e5be",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"adoptions",
+								"68532b7100d34fa66e49e5be"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Adoption",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/adoptions/user/68532a4e1ce0212b11704bb3/pet/68532aee00a6fefe17694ad6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"adoptions",
+								"user",
+								"68532a4e1ce0212b11704bb3",
+								"pet",
+								"68532aee00a6fefe17694ad6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/users/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/users/6834e4983d299ce3b6952416",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"6834e4983d299ce3b6952416"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User By Id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\": \"Rodolfo\",\r\n    \"last_name\": \"Peralta\",\r\n    \"email\": \"rodolfoperalta1994@hotmail.com\",\r\n    \"password\": \"1234567\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/users/6834e4983d299ce3b6952416",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"6834e4983d299ce3b6952416"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/users/682e5f7d67feb8d920159bc5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"682e5f7d67feb8d920159bc5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY4MmU1ZmQxNWQ4OWYzOWRiNmVlNTcxYSIsImVtYWlsIjoicm9kb2xmb3BlcmFsdGExOTk0QGhvdG1haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkeURhbzQxS2s0dFM5eHVKNVdzb3BwdXlVQUNFS1hEbTd2cVNyTm5GMWk3RWtteTRGLm1yQTYiLCJib2FyZCI6IjY4MmU1ZmQxNWQ4OWYzOWRiNmVlNTcxOCIsIl9fdiI6MH0sImlhdCI6MTc0Nzg3MjUzMywiZXhwIjoxNzQ3ODczNDMzfQ.nMZQ-x6bRCV2zxL5T2imNnPce-76TIHrPY8LytndnBw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\": \"Rodolfo\",\r\n    \"last_name\": \"Peralta\",\r\n    \"email\": \"rodolfoperalta1994@hotmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/users/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sessions",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\": \"Rodolfo\",\r\n    \"last_name\": \"Peralta\",\r\n    \"email\": \"rodolfoperalta1994@hotmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/sessions/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"sessions",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"rodolfoperalta1994@hotmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/sessions/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"sessions",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Current",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Im5hbWUiOiJSb2RvbGZvIFBlcmFsdGEiLCJyb2xlIjoidXNlciIsImVtYWlsIjoicm9kb2xmb3BlcmFsdGExOTk0QGhvdG1haWwuY29tIiwidGltZXN0YW1wTGFzdExvZ2luIjoiMjAyNS0wNy0wMVQyMjoxNToyMy4yNzlaIn0sImlhdCI6MTc1MTQwODEyMywiZXhwIjoxNzUxNDExNzIzfQ.9X3c8wx_FZofdWYFqXLRr2tji9NY7O7io-OsWPgMZMk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/sessions/current",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"sessions",
+								"current"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Mock",
+			"item": [
+				{
+					"name": "Mock Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/mocks/mockingusers?count=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"mocks",
+								"mockingusers"
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mock Pets",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/mocks/mockingpets?count=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"mocks",
+								"mockingpets"
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generate Data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/mocks/generateData",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"mocks",
+								"generateData"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
