@@ -81,13 +81,29 @@ Instala las dependencias:
 npm install 
 ```
 
+Crea un archivo .env con las variables de entorno necesarias:
+
+```
+# Port Server
+PORT = 8080
+
+# Node env (development or production)
+NODE_ENV = development
+
+# Mongo DB
+MONGO = mongodb+srv://<username>:<password>@<cluster-url>/<database>?retryWrites=true&w=majority&appName=<your-app-name>
+
+# Json Web Token
+PRIVATE_JWT_KEY = secret-key
+```
+
 Ejecuta la aplicación:
 
 ```bash
 npm start
 ```
 
-O en modo desarrollo con:
+O en modo desarrollo (usa nodemon) con:
 
 ```bash
 npm run dev
