@@ -1,10 +1,9 @@
-import { Router } from 'express';
-import mockController from '../controllers/mocks.controller.js';
+const express = require("express");
+const router = express.Router();
+const MockController = require("../controllers/MockManagerController.js");
 
-const router = Router();
+router.get("/mockingusers", async (request, response) => await MockController.mockUsers(request, response));
+router.get("/mockingpets", async (request, response) => await MockController.mockPets(request, response));
+router.post("/generateData", async (request, response) => await MockController.generateData(request, response));
 
-router.get("/mockingusers", mockController.mockUsers);
-router.get("/mockingpets", mockController.mockPets);
-router.post("/generateData", mockController.generateData);
-
-export default router;
+module.exports = router;

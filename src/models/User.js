@@ -1,8 +1,8 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
-const collection = 'Users';
+const userCollection = 'User';
 
-const schema = new mongoose.Schema({
+const usersSchema = new mongoose.Schema({
     first_name:{
         type: String,
         required:true
@@ -29,14 +29,18 @@ const schema = new mongoose.Schema({
             {
                 _id:{
                     type:mongoose.SchemaTypes.ObjectId,
-                    ref:'Pets'
+                    ref:'Pet'
                 }
             }
         ],
         default:[]
+    },
+    timestampLastLogin: {
+        type: Date,
+        default: Date.now
     }
 })
 
-const userModel = mongoose.model(collection,schema);
+const User = mongoose.model(userCollection, usersSchema);
 
-export default userModel;
+module.exports = User;

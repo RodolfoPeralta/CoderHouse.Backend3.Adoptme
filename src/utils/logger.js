@@ -1,6 +1,8 @@
-import winston from "winston";
-import dotenv from "dotenv";
+const winston = require("winston");
+const dotenv = require("dotenv");
 dotenv.config();
+
+const environment = process.env.NODE_ENV || process.argv[2];
 
 const options = {
     levels: {
@@ -65,7 +67,41 @@ const prodLogger = winston.createLogger({
     ]
 });
 
-const logger = process.env.NODE_ENV === "production" ? prodLogger : devLogger;
+// Test logger
 
-export default logger;
+const testLogger = winston.createLogger({
+    levels: options.levels,
+    transports: [
+        new winston.transports.Console({
+            level: "fatal",
+            format: winston.format.combine(
+                winston.format.timestamp({ format: 'DD-MM-YYYY HH:mm:ss' }),
+                winston.format.colorize(),
+                winston.format.printf(({ timestamp, level, message }) => {
+                    return `${timestamp} | ${level}: ${message}`;
+                })
+            )
+        }),
+
+        new winston.transports.File({
+            filename: "./errors.log",
+            level: "error",
+            format: winston.format.simple()
+        })
+    ]
+});
+
+const logger = () => {
+    if(environment === "production") {
+        return prodLogger;
+    }
+    if(environment === "development") {
+        return devLogger;
+    }
+    if(environment === "test") {
+        return testLogger;
+    }
+}
+
+module.exports = logger();
 

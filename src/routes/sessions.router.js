@@ -1,12 +1,11 @@
-import { Router } from 'express';
-import sessionsController from '../controllers/sessions.controller.js';
+const express = require("express");
+const router = express.Router();
+const SessionController = require("../controllers/SessionManagerController.js");
+const JwtUtils = require("../utils/Jwt.js");
 
-const router = Router();
+router.post('/register', async (request, response) => await SessionController.register(request, response));
+router.post('/login', async (request, response) => await SessionController.login(request, response));
+router.get('/current', JwtUtils.authorizeToken, async (request, response) => await SessionController.current(request, response));
 
-router.post('/register',sessionsController.register);
-router.post('/login',sessionsController.login);
-router.get('/current',sessionsController.current);
-router.get('/unprotectedLogin',sessionsController.unprotectedLogin);
-router.get('/unprotectedCurrent',sessionsController.unprotectedCurrent);
 
-export default router;
+module.exports = router;

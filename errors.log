@@ -1,0 +1,10 @@
+error: DELETE /api/pets/6857157682012e9f08db82e6 - Status code: 404 - Message: Pet with id '6857157682012e9f08db82e6' not found
+error: DELETE /api/pets/685716205e6d0edb17106622 - Status code: 404 - Message: Pet with id '685716205e6d0edb17106622' not found
+error: DELETE /api/pets/685716681171d255f027871d - Status code: 404 - Message: Pet with id '685716681171d255f027871d' not found
+error: DELETE /api/pets/6857174a7d2edbcfd5470716 - Status code: 404 - Message: Pet with id '6857174a7d2edbcfd5470716' not found
+error: DELETE /api/users/68571936cfa1b8d1f6b734d6 - Status code: 404 - Message: User with id '68571936cfa1b8d1f6b734d6' not found
+error: DELETE /api/pets/68571936cfa1b8d1f6b734de - Status code: 404 - Message: Pet with id '68571936cfa1b8d1f6b734de' not found
+error: DELETE /api/users/68571952df6fddc67a64f71c - Status code: 404 - Message: User with id '68571952df6fddc67a64f71c' not found
+error: DELETE /api/pets/68571952df6fddc67a64f724 - Status code: 404 - Message: Pet with id '68571952df6fddc67a64f724' not found
+error: DELETE /api/users/685719d5606c5c285f189b4e - Status code: 404 - Message: User with id '685719d5606c5c285f189b4e' not found
+error: DELETE /api/pets/685719d5606c5c285f189b56 - Status code: 404 - Message: Pet with id '685719d5606c5c285f189b56' not found

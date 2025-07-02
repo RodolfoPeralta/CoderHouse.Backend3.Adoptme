@@ -1,13 +1,12 @@
-import { Router } from 'express';
-import usersController from '../controllers/users.controller.js';
+const express = require("express");
+const router = express.Router();
+const UserController = require("../controllers/UserManagerController.js");
 
-const router = Router();
-
-router.get('/',usersController.getAllUsers);
-
-router.get('/:uid',usersController.getUser);
-router.put('/:uid',usersController.updateUser);
-router.delete('/:uid',usersController.deleteUser);
+router.get('/', async (request, response) => await UserController.getAllUsers(request, response));
+router.get('/:uid', async (request, response) => await UserController.getUserById(request, response));
+router.post('/', async (request, response) => await UserController.createUser(request, response));
+router.put('/:uid', async (request, response) => await UserController.updateUserById(request, response));
+router.delete('/:uid', async (request, response) => await UserController.deleteUserById(request, response));
 
 
-export default router;
+module.exports = router;

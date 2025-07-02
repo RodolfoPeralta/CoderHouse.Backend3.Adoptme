@@ -1,13 +1,12 @@
-import { Router } from 'express';
-import petsController from '../controllers/pets.controller.js';
-import uploader from '../utils/uploader.js';
+const express = require("express");
+const router = express.Router();
+//const uploader =  require("../utils/uploader.js");
+const PetController = require("../controllers/PetManagerController.js");
 
-const router = Router();
+router.get('/', async (request, response) => await PetController.getAllPets(request, response));
+router.get('/:pid', async (request, response) => await PetController.getPetById(request, response));
+router.post('/', async (request, response) => await PetController.createPet(request, response));
+router.put('/:pid', async (request, response) => await PetController.updatePetById(request, response));
+router.delete('/:pid', async (request, response) => await PetController.deletePetById(request, response));
 
-router.get('/',petsController.getAllPets);
-router.post('/',petsController.createPet);
-router.post('/withimage',uploader.single('image'), petsController.createPetWithImage);
-router.put('/:pid',petsController.updatePet);
-router.delete('/:pid',petsController.deletePet);
-
-export default router;
+module.exports = router;
