@@ -46,7 +46,6 @@ http://localhost:8080/docs
 
 Los tests funcionales cubren todos los endpoints disponibles en la API, incluyendo:
 
-- Autenticación (`/sessions`)
 - Gestión de usuarios (`/users`)
 - Gestión de mascotas (`/pets`)
 - Gestión de adopciones (`/adoptions`)
